@@ -83,11 +83,11 @@ const PostController = {
     } catch (error) {
       res.status(500).json({ error: 'Произошла ошибка при получении поста' });
     }
- },
+  },
 
 
   deletePost: async (req, res) => {
-    const { id } = req.params;
+      const { id } = req.params;
 
     // Проверка, что пользователь удаляет свой пост
     const post = await prisma.post.findUnique({ where: { id } });
